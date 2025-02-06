@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>로그의 밑 변환 공식</title>
+  <title>로그의 밑 변환 공식 퀴즈</title>
   <!-- MathJax 로드 (수식 렌더링) -->
   <script
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
@@ -117,7 +117,7 @@
 </head>
 <body>
 <div class="container">
-  <h1>로그의 밑 변환 공식</h1>
+  <h1>로그의 밑 변환 공식 퀴즈</h1>
   <!-- 이름 입력 -->
   <label for="playerName">이름을 입력하세요:</label><br />
   <input type="text" id="playerName" placeholder="이름 입력" />
@@ -174,6 +174,7 @@
 */
 
 // ------------------ 모든 문제/보기/정답 데이터 ------------------
+// (문제 64번은 계산식이 모호하여 삭제하였고, 그 이후의 문제들은 번호를 당겨 재배열함)
 const questionsData = [
   // (1) ~ (10)
   {
@@ -294,8 +295,7 @@ const questionsData = [
     correctIndex: 0,
   },
 
-  // (21)번 문제 삭제됨
-
+  // (21)번 문제 삭제됨; 이어서
   {
     text: "\\( (\\log_{6}{27})(\\log_{9}{6}) + \\log_{2}{4} + \\log_{\\tfrac13}{27} \\)",
     choices: ["\\(\\tfrac{1}{2}\\)", "1", "2", "3"],
@@ -327,7 +327,7 @@ const questionsData = [
     correctIndex: 0,
   },
 
-  // (27) ~ (29) – 원래 (27)번을 수정, (30)번 삭제됨
+  // (27) ~ (29) – 임의 예시
   {
     text: "\\(\\log_{2}{4} + \\log_{8}{64}\\) (임의 예시)",
     choices: ["3", "4", "\\(\\dfrac{9}{2}\\)", "\\(\\tfrac{7}{2}\\)"],
@@ -448,21 +448,16 @@ const questionsData = [
     correctIndex: 0,
   },
 
-  // (63) ~ (64)
+  // (63) ~ (64) – 원래 64번 문제 삭제됨; 아래 문제는 번호를 당겨 재배열함
   {
     text: "63) \\(\\log_{10}{36}=a,\\;\\log_{10}{24}=b\\)일 때 \\(\\log_{10}{45}\\)?",
     choices: ["\\(\\dfrac{7a - 6b + 4}{4}\\)", "\\(\\dfrac{7a - 6b}{4}\\)", "\\(\\dfrac{3a - 2b + 4}{4}\\)", "\\(\\dfrac{3a + 4 - 2b}{4}\\)"],
     correctIndex: 0,
   },
-  {
-    text: "64) \\(2^a=10,\\;10^b=3\\)일 때 \\(\\log_{6}{45}\\)를 a,b로?",
-    choices: ["\\(\\dfrac{2+b}{a} - 1\\)", "\\(\\dfrac{2 + 2b}{a + b}\\)", "\\(1 + \\dfrac{b}{a}\\)", "\\(\\dfrac{2 + 3b}{a} - 1\\)"],
-    correctIndex: 3,
-  },
 
-  // (65) ~ (68)
+  // (65) ~ (68) → 번호를 각각 (64)~(67)로 변경
   {
-    text: "65) \\(2^a=10,\\;3^b=10\\)일 때 \\(\\log_{3}{5}\\)를 a,b로?",
+    text: "64) \\(2^a=10,\\;3^b=10\\)일 때 \\(\\log_{3}{5}\\)를 a,b로?",
     choices: [
       "\\(\\dfrac{b(a-1)}{a}\\)",
       "\\(\\dfrac{a-b}{a}\\)",
@@ -472,7 +467,7 @@ const questionsData = [
     correctIndex: 0,
   },
   {
-    text: "66) \\(3^a=2,\\;3^b=5\\)일 때 \\(\\log_{12}{50}\\)?",
+    text: "65) \\(3^a=2,\\;3^b=5\\)일 때 \\(\\log_{12}{50}\\)?",
     choices: [
       "\\(\\dfrac{a+2b}{2a+1}\\)",
       "\\(\\dfrac{a+2b}{2b+1}\\)",
@@ -482,9 +477,9 @@ const questionsData = [
     correctIndex: 0,
   },
   {
-    text: "67) \\(2^a=3,\\;3^b=5\\)일 때 \\(\\log_{18}{30}\\)?",
+    text: "66) \\(2^a=3,\\;3^b=5\\)일 때 \\(\\log_{18}{30}\\)?",
     choices: [
-      "\\(\\dfrac{1+ a+ ab}{1+ 2a}\\)",
+      "\\(\\dfrac{1+ a+ ab}{1+2a}\\)",
       "\\(\\dfrac{1+ b}{1+2a}\\)",
       "\\(\\dfrac{1+ a+ ab}{a+2}\\)",
       "\\(\\dfrac{a+ b}{1+2a}\\)"
@@ -492,7 +487,7 @@ const questionsData = [
     correctIndex: 0,
   },
   {
-    text: "68) \\(10^x=a,\\;10^y=b,\\;10^z=c\\)일 때 \\(\\log_{10}{\\Bigl(\\dfrac{b^5 c}{a^3}\\Bigr)}\\)을 x,y,z로?",
+    text: "67) \\(10^x=a,\\;10^y=b,\\;10^z=c\\)일 때 \\(\\log_{10}{\\Bigl(\\dfrac{b^5 c}{a^3}\\Bigr)}\\)을 x,y,z로?",
     choices: [
       "\\(5y + z - 3x\\)",
       "\\(5x + y - 3z\\)",
@@ -687,7 +682,7 @@ function endGame(){
 
 // 점수 전송
 function sendScore(){
-  const game = "로그의 밑 변환 공식";
+  const game = "로그의 밑 변환 공식 퀴즈";
   const name = document.getElementById('playerName').value || "Unknown";
   const elapsedTime = totalGameTime;
 
