@@ -174,7 +174,6 @@
 */
 
 // ------------------ 모든 문제/보기/정답 데이터 ------------------
-// (문제 64번은 계산식이 모호하여 삭제하였고, 그 이후의 문제들은 번호를 당겨 재배열함)
 const questionsData = [
   // (1) ~ (10)
   {
@@ -254,11 +253,12 @@ const questionsData = [
     choices: ["1", "2", "3", "4"],
     correctIndex: 1,
   },
-  {
-    text: "\\(\\log_{3}{5} \\times \\log_{5}{7} \\times \\log_{7}{9} \\times \\log_{9}{3}\\) (문제 14와 유사)",
-    choices: ["0", "1", "2", "3"],
-    correctIndex: 1,
-  },
+  // 중복되어 어색한 문제(삭제됨):
+  // {
+  //   text: "\\(\\log_{3}{5} \\times \\log_{5}{7} \\times \\log_{7}{9} \\times \\log_{9}{3}\\) (문제 14와 유사)",
+  //   choices: ["0", "1", "2", "3"],
+  //   correctIndex: 1,
+  // },
   {
     text: "\\(\\log_{25}{3} \\times \\log_{16}{5} \\times \\log_{9}{32}\\)",
     choices: [
@@ -269,11 +269,12 @@ const questionsData = [
     ],
     correctIndex: 1,
   },
-  {
-    text: "\\((\\log_{9}{3})^2 + \\dfrac{\\log_{9}{18}}{\\log_{2}{6}}\\)",
-    choices: ["0.50", "0.75", "0.76", "1.00"],
-    correctIndex: 2,
-  },
+  // 근삿값 문제이므로 삭제됨:
+  // {
+  //   text: "\\((\\log_{9}{3})^2 + \\dfrac{\\log_{9}{18}}{\\log_{2}{6}}\\)",
+  //   choices: ["0.50", "0.75", "0.76", "1.00"],
+  //   correctIndex: 2,
+  // },
   {
     text: "\\(\\log_{2}{20} - \\dfrac{1}{\\log_{5}{2}}\\)",
     choices: ["2", "3", "4", "5"],
@@ -448,14 +449,12 @@ const questionsData = [
     correctIndex: 0,
   },
 
-  // (63) ~ (64) – 원래 64번 문제 삭제됨; 아래 문제는 번호를 당겨 재배열함
+  // (63) ~ (64)
   {
     text: "63) \\(\\log_{10}{36}=a,\\;\\log_{10}{24}=b\\)일 때 \\(\\log_{10}{45}\\)?",
     choices: ["\\(\\dfrac{7a - 6b + 4}{4}\\)", "\\(\\dfrac{7a - 6b}{4}\\)", "\\(\\dfrac{3a - 2b + 4}{4}\\)", "\\(\\dfrac{3a + 4 - 2b}{4}\\)"],
     correctIndex: 0,
   },
-
-  // (65) ~ (68) → 번호를 각각 (64)~(67)로 변경
   {
     text: "64) \\(2^a=10,\\;3^b=10\\)일 때 \\(\\log_{3}{5}\\)를 a,b로?",
     choices: [
@@ -466,6 +465,8 @@ const questionsData = [
     ],
     correctIndex: 0,
   },
+
+  // (65) ~ (68) → 번호를 각각 (64)~(67)로 변경
   {
     text: "65) \\(3^a=2,\\;3^b=5\\)일 때 \\(\\log_{12}{50}\\)?",
     choices: [
@@ -498,7 +499,6 @@ const questionsData = [
   }
 ];
 
-// --------------- 전역 변수 ---------------
 let currentDifficulty = null;
 let timeLimit = 0;    // 문제당 제한 (초)
 let scorePerQuestion = 0;
